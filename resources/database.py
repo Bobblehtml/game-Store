@@ -1,7 +1,7 @@
 import sqlite3 
 from games_data import GAMES 
 
-connection = sqlite3.connection("store.db")
+connection = sqlite3.connect("store.db")
 connection.execute("DROP TABLE IF EXISTS games")
 connection.execute(""" create table games (
     id INTEGER PRIMARY KEY,
@@ -14,4 +14,4 @@ connection.executemany(
 connection.commit()
 count = connection.execute("SELECT COUNT (*) FROM games").fetchone() [0]
 print(count, "games added")
-connection.close()
+connection.close
