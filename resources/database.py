@@ -1,7 +1,7 @@
-import sqlite3 
+import sqlite3 #imports SQLite3 and links it to the GAMES library
 from games_data import GAMES 
 
-connection = sqlite3.connect("store.db")
+connection = sqlite3.connect("store.db") #connects the SQLite3 to the store database
 connection.execute("DROP TABLE IF EXISTS games")
 connection.execute(""" create table games (
     id INTEGER PRIMARY KEY,
